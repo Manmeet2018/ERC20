@@ -108,10 +108,10 @@ contract ERC20 is IERC20Metadata, IERC20 {
      * @notice the caller must have allowance for ``sender``'s tokens of at least
      * `amount`.
      */
-    function transferFrom(address sender, 
-                          address recipient, 
-                          uint256 amount) 
-                          public virtual override returns (bool) {
+    function transferFrom(address sender,
+                        address recipient,
+                        uint256 amount) 
+                        public virtual override returns (bool) {
         
         _transfer(sender, recipient, amount);
         require(_allowances[sender][msg.sender] >= amount, "ERC20: Transfer amount exceeds allowance");
